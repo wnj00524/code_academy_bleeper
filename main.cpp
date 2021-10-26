@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
            string word = argv[3];
             bleeper(word, text);
            cout << "Word = " << word << "\n";
-           cout << "Data = " << text << "\n";
+           cout << "Data saved in out.txt\n";
            ofstream out("out.txt");
            out << text;
            out.close();
