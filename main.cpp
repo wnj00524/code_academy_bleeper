@@ -26,14 +26,26 @@ int main(int argc, char* argv[]) {
         {
             //cout << "Got to the -f check...\n";
            std::ifstream  ifs(argv[2]);
-           string text((istreambuf_iterator<char>(ifs)), istreambuf_iterator<char>());
-           string word = argv[3];
-            bleeper(word, text);
-           cout << "Word = " << word << "\n";
-           cout << "Data saved in out.txt\n";
-           ofstream out("out.txt");
-           out << text;
-           out.close();
+           if (ifs.good())
+           {
+               string text((istreambuf_iterator<char>(ifs)), istreambuf_iterator<char>());
+               string word = argv[3];
+               ofstream out("out.txt");
+               bleeper(word, text);
+               out << text;
+               out.close();
+               cout << "Word = " << word << "\n";
+               cout << "Data saved in out.txt\n";
+           }
+           else
+           {
+               cout << "File " << argv[2] << " could not be found.\n";
+           }
+
+
+
+
+
             return 0;
 
         }
