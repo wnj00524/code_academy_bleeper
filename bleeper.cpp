@@ -23,6 +23,7 @@ void bleeper(std::string word, std::string &sentence)
             }
             if (ismatch)
             {
+
                 for (int b = a; b < ((a + word.size())); b++)
                 {
                     sentence[b] = '*';
